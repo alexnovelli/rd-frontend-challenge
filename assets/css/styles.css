@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+*:focus {
+    outline: 0;
+}
+html, body, #app {
+    height: 100%;
+}
+body, input, button {
+    font: 14px 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+button {
+    cursor: pointer;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(-45deg, #aaa 25%, #eee 100%);
+    background-attachment: fixed;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#app.logged {
+    justify-content: flex-start;
+    height: auto;
+    padding: 20px 10px 20px 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.login {
+    display: none;
+    animation: .5s ease-in 0s normal 1 forwards running fadein;
+}
+
+.login form {
+    background-color: rgba(255,255,255,.55);
+    width: 100%;
+    padding: 16px;
+    border-radius: 18px 0;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+}
+
+.login form input {
+    width: 100%;
+    padding: 14px 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 3px;
+}
+
+.login form input:not([type="submit"]) {
+    background-color: rgba(0,0,0,.15);
+    text-align: left;
+}
+
+.login form input:not([type="submit"]):focus {
+    background-color: rgba(0,0,0,.1);
+    transition: background-color 0.1s linear 0s;
+}
+
+.login form input[type="submit"] {
+    background-color: #008429;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s linear 0s;
+}
+
+.login form input[type="submit"]:disabled {
+    background-color: #d1d1d1;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    animation: .5s ease-in 0s normal 1 forwards running fadein;
+}
+
+.container li {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin: 0 10px 10px 0;
+}
+
+.container li a {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+    background-color: #fff;
+    height: 40px;
+    padding: 5px 5px 5px 45px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0,0,0,.15);
+    color: #888888;
+    font-weight: 700;
+}
+
+.container li a img {
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    left: 5px;
+    border-radius: 50%;
+    filter: grayscale();
+    transition: filter 0.3s linear 0s, transform 0.15s ease-in-out 0s;
+}
+
+@media screen and (min-width: 769px) {    
+    .login form {
+        width: 400px;
+    }
+    
+    .container {
+        width: 600px;
+    }
+
+    .login form input[type="submit"]:hover {
+        background-color: #00a333;
+    }
+
+    .container li a:hover img {
+        transform: scale(2);
+        filter: none;
+    }
+}
